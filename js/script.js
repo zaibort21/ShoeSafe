@@ -33,6 +33,9 @@ function inicializarFAQ() {
     faqPreguntas.forEach(pregunta => {
         pregunta.addEventListener('click', () => {
             const respuesta = pregunta.nextElementSibling;
+            if (!respuesta) return;
+
+            pregunta.classList.toggle('active');
             respuesta.classList.toggle('active');
         });
     });
